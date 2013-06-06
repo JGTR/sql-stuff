@@ -23,10 +23,15 @@ VALUES
 (10, "Lord of the Rings", 20);
 
 #3 Most expensive
-SELECT MAX(price) FROM dvds;
+SELECT TITLE from dvds WHERE  (MAX(price) FROM dvds);
+
+SELECT *
+  FROM dvds
+  ORDER BY price DESC LIMIT 1;
 
 #4 Sum of two DVDs
 SELECT SUM(price) FROM dvds WHERE name="Fight Club" OR name="Hackers";
+
 
 
 #5 Return titles of DVDs
