@@ -28,12 +28,14 @@ def age_from_seconds(secs)
   secs/seconds_in_minutes/minutes_in_hours/hours_in_days/days_in_weeks/weeks_in_years
 end
 
-age_from_seconds(1111*1000000)
+puts age_from_seconds(1111*1000000)
 
 
 def hours_in_year(years)
   hours_in_days((days_in_weeks(weeks_in_years(years))))
 end
+
+puts hours_in_year(1)
 
 def minute_in_decade(decade)
   years = decade * 10
@@ -42,5 +44,7 @@ def minute_in_decade(decade)
 end
 
 def age_in_seconds(years)
-  minutes_in_hours(hours_in_days(days_in_weeks(weeks_in_years(years))))
+  seconds_in_minutes(minutes_in_hours(hours_in_days(days_in_weeks(weeks_in_years(years)))))
 end
+
+puts age_in_seconds(28)
