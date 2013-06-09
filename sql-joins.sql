@@ -124,7 +124,7 @@ SELECT title, goal, SUM(pledges.amount) as pledge_amount
 FROM projects 
 JOIN pledges
   on projects.project_id = pledges.project_id
-  GROUP BY projects.title;
+  GROUP BY projects.title HAVING pledge_amount > goal;
 
 -- Select user names and amounts of all pledges. Order them by the amount.
 
