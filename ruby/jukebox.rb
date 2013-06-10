@@ -11,6 +11,7 @@ songs = [
   "The Phoenix - Consolation Prizes"
 ]
 
+
 # list, play, help, exit
 
 
@@ -24,6 +25,20 @@ def list(songs)
   end
 end
 
+def open_video(index)
+links = [ 
+  "http://www.youtube.com/watch?v=HL548cHH3OY",
+  "http://www.youtube.com/watch?v=VARmJlPu6i4",
+  "http://www.youtube.com/watch?v=K0g7R3xqdcM",
+  "http://www.youtube.com/watch?v=0YuSg4mts9E",
+  "http://www.youtube.com/watch?v=KkWm898ileE",
+  "http://www.youtube.com/watch?v=9i1MXHGB8g0",
+  "https://www.youtube.com/watch?v=gnkVUReUVpQ"
+]
+
+`open #{links[index]}`
+end
+
 def play(songs)
   selection = 0
   unless (selection >= 1) && (selection <= songs.length)
@@ -32,6 +47,7 @@ def play(songs)
     selection = selection.to_i - 1
   end
   puts "Now playing: #{songs[selection]}"
+  open_video(selection)
 end
 
 def helpme
