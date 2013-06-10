@@ -30,7 +30,8 @@ end
 
 # Assign a variable based on the result of an if statement
 
-if 2 == 2; x = 2; puts x; end
+x = 2 if (2 == 2) 
+
 
 # Execute code based on the result of an if statement.
 #   conditionally run puts "Hello Class" if 1 < 2
@@ -120,9 +121,17 @@ end
 
 # Assignment
 # Write a while loop that runs exactly 5 times
+
 5.times do 
   puts "time"
 end
+
+x = 0
+while x <5
+  puts "time"
+  x += 1
+end
+
 
 # Write a while loop that counts from 1 to 10 and puts all odd numbers
 x = 0
