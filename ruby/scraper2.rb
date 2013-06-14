@@ -12,7 +12,7 @@ require 'open-uri'
 # scraped_database.execute "INSERT INTO students (name) VALUES ('#{student_name}')"
 
 # #--------------------------------------------
-scraped_database = SQLite3::Database.new ":db:"
+scraped_database = SQLite3::Database.new "students.db"
 scraped_database.execute "CREATE TABLE IF NOT EXISTS students(Id INTEGER PRIMARY KEY, name TEXT, quote TEXT, bio TEXT, work TEXT, github TEXT, treehouse TEXT, codeschool TEXT, coderwall TEXT)"
 
 
@@ -34,7 +34,7 @@ student_hrefs.each do |x|
      student_name = page.search("h4").first.text
      quote = page.search("h3").first.text.strip
      bio = page.search("p").first.text.strip
-     work = page.css(".services")[2].text.strip
+     work = page.css(".services")[2].text.split.join(",").gsub(","," ").gsub("Work ", "")
      github = page.css(".section-services a[href*='github']").attribute("href").value
      treehouse = page.css(".section-services a[href*='treehouse']").attribute("href").value
      codeschool = page.css(".section-services a[href*='codeschool']").attribute("href").value

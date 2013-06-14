@@ -51,6 +51,8 @@ def scrape_student(page, students)
     #   student[:codeacademy] = "none"
     # end
 
+      page.css(".services a[href*=treehouse]").attribute("href").value
+
     # if page.css("h4")
     #   student[:name] = page.css("h4").first.text
     # else

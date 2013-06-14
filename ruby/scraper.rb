@@ -75,5 +75,5 @@ binding.pry
 #   :codeacademy = $page.search(".services a")[2].attribute("href").value
 # }
 
-
+page = Nokogiri::HTML(open("http://students.flatironschool.com/students/jackaltman.html"))
 db.execute("INSERT INTO Students values(:word, :integer)", {:word=> "Here"}, :integer=>2)
