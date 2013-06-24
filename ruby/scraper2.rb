@@ -47,6 +47,5 @@ student_hrefs.each do |x|
   rescue OpenURI::HTTPError => ex
   end
 end
-end
 
 scraped_database.execute "SELECT * FROM students"
